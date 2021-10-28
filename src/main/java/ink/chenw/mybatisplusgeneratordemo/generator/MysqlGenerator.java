@@ -24,11 +24,11 @@ import java.util.Scanner;
 public class MysqlGenerator {
     //--------------------数据库相关配置---------------------
     //数据库连接
-    private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useAffectedRows=true&serverTimezone=GMT%2B8&useSSL=false&zeroDateTimeBehavior=CONVERT_TO_NULL";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useAffectedRows=true&serverTimezone=GMT%2B8&useSSL=false&zeroDateTimeBehavior=CONVERT_TO_NULL";
     //账号
     private static final String USERNAME = "root";
     //密码
-    private static final String PASSWORD = "123";
+    private static final String PASSWORD = "123456";
     //连接驱动
     private static final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
 
@@ -61,7 +61,7 @@ public class MysqlGenerator {
         System.out.println(help.toString());
         if (scanner.hasNext()) {
             String ipt = scanner.next();
-            if (StringUtils.isNotEmpty(ipt)) {
+            if (!StringUtils.isBlank(ipt)) {
                 return ipt;
             }
         }
